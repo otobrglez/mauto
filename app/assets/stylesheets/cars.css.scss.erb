@@ -1,0 +1,71 @@
+// Place all the styles related to the Car controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body,td,th,p{
+	font-family:helvetica, sans-serif;
+	font-size:14px;
+	color:#333;
+	/* font-family: 'Istok Web', sans-serif; */
+}
+
+a{
+	color:#AD6069;
+	text-decoration:none;
+}
+
+h1,h2,h3,body,html,ul,li{
+	margin:0;
+	padding:0;	
+}
+
+ul,li{
+	list-style:none;
+}
+
+body{
+	background-image: url("<%= asset_path 'bg.jpg' %>");
+	text-align:center;
+}
+
+.container{
+	text-align:left;
+	margin:0 auto;
+	max-width:600px;
+
+	background-color:white;
+
+	padding-left:20px;
+	padding-right:20px;
+
+	padding-bottom:10px;
+	padding-top:5px;
+
+	.footer{
+		margin-top:10px;
+		padding-top:5px;
+		border-top:1px solid #ccc;
+	}
+}
+
+ul#cars{
+	li{
+		display:block;
+		margin-bottom:0px;
+		border-top:1px solid #eee;
+		padding:2px;
+		padding-top:3px;
+		padding-bottom:3px;
+	}
+
+	li:nth-child(2n){
+		background-color:#f4f4f4;
+	}
+
+	li .name{
+		display:block;
+		font-weight:bold;
+	}
+}

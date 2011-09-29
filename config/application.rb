@@ -33,11 +33,11 @@ module Mauto
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
-    # config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Ljubljana'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    # config.i18n.default_locale = :en
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -50,5 +50,14 @@ module Mauto
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    
+    config.generators do |g|
+      g.test_framework :rspec, :views => false, :fixture => true
+      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+      # g.fixture_replacement :machinist
+      # g.form_builder :simple_form
+      # g.template_engine :haml
+    end
   end
 end

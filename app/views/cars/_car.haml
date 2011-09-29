@@ -1,0 +1,16 @@
+%li#car{:class => "car-#{car.id}"}
+	.name=car
+	= car.built_at.strftime("%Y")
+	\/
+	= number_to_human car.e_space, :units => { :unit => "ccm"}
+	\/
+	= number_to_human car.e_power,  :units => { :unit => "kW"}
+	\/
+	= number_to_human car.e_horses, :units => { :unit => "KM"}
+	\/
+	= number_to_human car.length, :units => { :unit => "km" }
+	\/
+	%strong.price= number_to_currency car.price, :unit => "&euro;"
+	
+	
+	

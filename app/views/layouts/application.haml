@@ -1,0 +1,28 @@
+!!!
+%html
+	%head
+		= stylesheet_link_tag    "application"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+		%link(href='http://fonts.googleapis.com/css?family=Istok+Web' rel='stylesheet' type='text/css')
+
+	
+	%body
+		.container
+			.header
+				%h1
+					=link_to root_path() do
+						Finding best car using MAUT.
+				%p
+					=link_to "Multi-Attribute Utility Theory(MAUT)", "http://en.wikipedia.org/wiki/Multi-criteria_decision_analysis"
+					is sub-discipline of 
+					=link_to "operations research", "http://en.wikipedia.org/wiki/Operations_research"
+					that explicitly considers multiple criteria in decision-making environments.
+			.main
+			
+				= yield
+
+			.footer
+				=link_to sanitize("&copy; 2011 - Oto Brglez / opalab"), "http://opalab.com"
+				|
+				=link_to "Source code @ GitHub", "https://github.com/otobrglez/mauto"

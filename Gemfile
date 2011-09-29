@@ -2,12 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -17,13 +11,30 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'haml'
+gem 'sass'
 
 # Use unicorn as the web server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :production do
+	gem 'therubyracer-heroku'
+	gem 'pg'
+end
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :development, :test do
+	gem 'ruby-debug19', :require => 'ruby-debug'
+	gem 'sqlite3'
+	gem 'thin'
+end
 
+group :test do
+	gem 'autotest'	
+	gem 'autotest-growl'
+	gem 'rcov' 
+	gem 'httparty'	
+	gem 'rspec', '>= 2.6'
+	gem 'rspec-rails', '>= 2.6'
+	gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git', :tag => 'v2.1.2'
+	gem 'factory_girl_rails', :git => 'git://github.com/thoughtbot/factory_girl_rails.git', :tag => 'v1.2.0'
+end
