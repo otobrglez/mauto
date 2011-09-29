@@ -15,10 +15,12 @@ Mauto::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true #false
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  config.assets.debug = true
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
