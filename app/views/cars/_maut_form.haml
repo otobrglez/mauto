@@ -1,0 +1,37 @@
+=form_for(@decision, :url => decide_cars_url(), :remote => true) do |f|
+
+	- if not f.object.errors.empty?
+		%ul.errors
+			- f.object.errors.each do |e,val|
+				%li=val
+	
+	%table
+		%tbody
+			%tr
+				%th Built at
+				%td=f.text_field :built_at, :size => "10"
+			%tr
+				%th Number of km
+				%td=f.text_field :length, :size => "10"			
+			%tr
+				%th(valign="top") Engine
+				%td(valign="top")
+					=f.text_field :engine, :size => "10"			
+
+					%table
+						%tbody
+							%tr
+								%th Power
+								%td=f.text_field :e_power, :size => "10"						
+							%tr
+								%th Horses
+								%td=f.text_field :e_horses, :size => "10"						
+							%tr
+								%th Space
+								%td=f.text_field :e_space, :size => "10"							
+			%tr
+				%th Price
+				%td=f.text_field :price, :size => "10"
+			%tr
+				%td(colspan="2")
+					=f.submit "Filter"

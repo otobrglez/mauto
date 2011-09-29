@@ -1,3 +1,6 @@
 
+#maut_form=render "maut_form"
 
-%ul#cars=render @cars
+#cars_list
+	- unless @cars.nil?
+		%ul#cars=render @cars

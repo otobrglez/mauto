@@ -11,6 +11,9 @@
 	= number_to_human car.length, :units => { :unit => "km" }
 	\/
 	%strong.price= number_to_currency car.price, :unit => "&euro;"
+
+	- unless car.score.nil?
+		.score=number_to_human car.score, :precision => 5
 	
 	
 	

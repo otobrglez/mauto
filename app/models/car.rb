@@ -1,5 +1,6 @@
 class Car < ActiveRecord::Base
 
+	attr_accessor :score
 
 	validates_presence_of :make, :model, :e_power, :e_horses, :e_space, :price, :built_at, :length
 	validates_numericality_of :e_power, :e_horses, :e_space, :price, :length
