@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+ruby '1.9.3'
 gem 'rails', '3.1.0'
 
 # Gems used only for assets and not required
@@ -13,7 +14,7 @@ end
 gem 'jquery-rails'
 gem 'haml'
 gem 'sass'
-
+gem 'heroku'
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -24,7 +25,7 @@ end
 
 group :development, :test do
 	gem 'ruby-debug19', :require => 'ruby-debug'
-	gem 'sqlite3'
+	gem 'pg'
 	gem 'thin'
 end
 
